@@ -1,14 +1,15 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { ThemeProvider } from "@material-tailwind/react";
+import ReactDOM from 'react-dom';
 import App from "./App";
+import "./index.css"
 
-const root = createRoot(document.getElementById("root"));
+const container = document.createElement('div');
+container.classList.add("root")
+document.body.appendChild(container)
 
-root.render(
+ReactDOM.render(
   <StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </StrictMode>
+    <App />
+  </StrictMode>,
+  container
 );
